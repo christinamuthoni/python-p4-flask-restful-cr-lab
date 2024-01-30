@@ -5,7 +5,10 @@ from models import db, Plant
 
 with app.app_context():
 
-    Plant.query.delete()
+    #Plant.query.delete()
+    # Drop existing tables and recreate them
+    db.drop_all()
+    db.create_all()
 
     aloe = Plant(
         id=1,
